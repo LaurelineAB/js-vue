@@ -6,6 +6,30 @@
     <title>Création d'un tableau en Vue.js</title>
 </head>
 <body>
-    
+    <section id="app1">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Active</th>
+            </tr>
+            <template v-for="user in users">
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td v-if="user.isActive === true">Yes</td>
+                    <td v-else>No</td>
+                </tr>
+            </template>
+        </table>
+        <form @submit.prevent="addUser">
+            <fieldset>
+                <label for="name">Username</label>
+                <input type="text" name="name" id="name">
+            </fieldset>
+            <button type="submit">Ajouter un utilisateur</button>
+        </form>
+    </section>
+    <script type="module" src="assets/js/index.js"></script>
 </body>
 </html>
