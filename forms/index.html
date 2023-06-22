@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices sur les formulaires avec Vue.js</title>
+</head>
+<body>
+    <section id="app1">  
+        <h2>Notes</h2>  
+        <ul>        
+            <li v-for="grade in grades">  
+                {{ grade }}  
+            </li>  
+        </ul>    
+        <form @submit.prevent="addGrade">  
+            <fieldset>            
+                <label for="grade">Saisir la note</label>  
+                <input type="text" name="grade" id="grade" />  
+            </fieldset>        
+            <button type="submit">Ajouter</button>  
+        </form>
+    </section>
+    <section id="app2">
+        <form @submit.prevent="addTask">
+            <fieldset>
+                <label for="task">Nouvelle tâche</label>
+                <input type="text" name="task" id="task">
+            </fieldset>
+            <button type="submit">Ajouter</button>
+        </form>
+        <ul>
+            <template v-for="task of tasks">
+                <li v-if="">{{task}}</li>
+                <button @click="done === true">Done</button>
+            </template>
+        </ul>
+    </section>
+    <script type="module" src="assets/js/index.js"></script>
+</body>
+</html>
