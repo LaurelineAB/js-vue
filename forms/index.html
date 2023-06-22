@@ -30,9 +30,10 @@
             <button type="submit">Ajouter</button>
         </form>
         <ul>
-            <template v-for="task of tasks">
-                <li v-if="">{{task}}</li>
-                <button @click="done === true">Done</button>
+            <template v-for="task in tasks">
+                <li v-if="task.done===true" style="text-decoration:line-through">{{task.toDo}}</li>
+                <li v-else>{{task.toDo}}</li>
+                <button @click="task.done = true">Done</button>
             </template>
         </ul>
     </section>
