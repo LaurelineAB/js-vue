@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découverte de Vue.js</title>
+</head>
+<body>
+    <section id="app1">
+        <p>{{ number }}</p>
+	    <button @click="addOne">Augmenter de 1</button>
+        <button @click="substractOne">Décrémenter de 1</button>
+    </section>
+    <section id="app2">
+        <h1 v-if="animal === 'Dogs'">Dogs</h1>
+        <h1 v-else-if="animal === 'Cats'">Cats</h1>
+        <h1 v-else>Not Dogs or Cats</h1>
+        <button @click="changeAnimal">Changer d'animal</button>
+    </section>
+    <ul id="app3">
+        <li v-for="ingredient in ingredients">  
+            {{ ingredient }}
+        </li> 
+        <template v-for="ingredient in ingredients">
+            <li v-if="ingredient === 'Salade'" class="green">Salade</li>
+            <li v-else-if="ingredient === 'Tomate'" class="red">Tomate</li>
+            <li v-else-if="ingredient === 'Oignon'" class="yellow">Oignon</li>
+        </template> 
+    </ul>
+    <ul id="app4">
+        <template v-for="number in numbers">
+            <li v-if="number%2 === 0" style="color:red">{{number}}</li>
+            <li v-else style="color:blue">{{number}}</li>
+        </template>
+
+    </ul>
+
+    <script type="module" src="assets/js/index.js"></script>
+</body>
+</html>
